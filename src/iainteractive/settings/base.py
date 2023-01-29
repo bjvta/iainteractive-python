@@ -1,9 +1,10 @@
 import os
 from os.path import abspath, join
 
+from ashe.utils import loadenv
+
 # from django.utils.translation import ugettext_lazy as _
 
-from ashe.utils import loadenv
 
 gettext = lambda s: s
 
@@ -31,8 +32,8 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "widget_tweaks",
     "iainteractive.apps.common",
-    'rest_framework',
-    'drf_yasg',
+    "rest_framework",
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,7 @@ TEMPLATES = [
     },
 ]
 
-REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema"}
 
 WSGI_APPLICATION = "iainteractive.wsgi.application"
 
@@ -81,15 +82,22 @@ DATABASES = {
 }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 
@@ -131,5 +139,4 @@ STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "../public/media")
 MEDIA_URL = "/media/"
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"

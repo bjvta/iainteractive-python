@@ -4,16 +4,14 @@ DEBUG = False
 SECURE_SSL_HOST = True
 UWSGI_CACHE_FALLBACK = True
 
-INSTALLED_APPS += [
-    "anymail",
-    "raven.contrib.django.raven_compat"
+INSTALLED_APPS += ["anymail", "raven.contrib.django.raven_compat"]
+
+ALLOWED_HOSTS = [
+    f'{os.environ.get(("NAME_DOMAIN"))}',
+    f'www.{os.environ.get(("NAME_DOMAIN"))}',
 ]
 
-ALLOWED_HOSTS = [f'{os.environ.get(("NAME_DOMAIN"))}', f'www.{os.environ.get(("NAME_DOMAIN"))}']
-
-RAVEN_CONFIG = {
-    "dsn": os.environ.get("SENTRY_DNS", "secret")
-}
+RAVEN_CONFIG = {"dsn": os.environ.get("SENTRY_DNS", "secret")}
 
 
 LOGGING = {

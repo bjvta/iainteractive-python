@@ -1,17 +1,18 @@
 """Api Viewsets"""
 
+from django.shortcuts import get_object_or_404
+from rest_framework import status, viewsets
+from rest_framework.response import Response
+
 from iainteractive.apps.common.models import Applicant
 from iainteractive.apps.common.serializers import ApplicantSerializer
-from rest_framework import viewsets
-from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
-from rest_framework import status
 
 
 class ApplicantViewSet(viewsets.ViewSet):
     """
     A simple ViewSet for listing or retrieving applicants.
     """
+
     def list(self, request):
         queryset = Applicant.objects.all()
         serializer = ApplicantSerializer(queryset, many=True)

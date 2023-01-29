@@ -6,7 +6,6 @@ from django.urls import path
 # Common
 from .views import *
 
-
 urlpatterns = [
-    path('', HomeView.as_view(), name='home_view'),
+    path("", HomeView.as_view(), name="home_view"),
 ]
