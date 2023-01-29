@@ -1,0 +1,24 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{% block title %}Title{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    {% comment %} <meta property="og:url" content="https://revival-connection.com/"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Revival Connection" />
+    <meta property="og:description" content="Una nueva realidad, una nueva forma de conectar." />
+    <meta property="og:image" content="https://web-bjvsoft.s3-us-west-2.amazonaws.com/facebook.png" /> {% endcomment %}
+
+    {% block css %}
+    {% endblock %}
+</head>
+<body class="main-body">
+    {% include 'layouts/messages.html' %}
+    {% block main %}{% endblock %}
+    {% block js %}
+    {% endblock %}
+</body>
+</html>

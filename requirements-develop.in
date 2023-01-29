@@ -1,0 +1,8 @@
+-r requirements.txt
+
+django-debug-toolbar
+factory_boy
+isort
+flake8
+black
+coverage
