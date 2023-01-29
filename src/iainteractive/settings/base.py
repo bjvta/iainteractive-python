@@ -1,7 +1,7 @@
 import os
 from os.path import abspath, join
 
-from django.utils.translation import ugettext_lazy as _
+# from django.utils.translation import ugettext_lazy as _
 
 from ashe.utils import loadenv
 
@@ -29,9 +29,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
-
     "widget_tweaks",
-    "iainteractive.apps.common"
+    "iainteractive.apps.common",
+    'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,8 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
 
 WSGI_APPLICATION = "iainteractive.wsgi.application"
 
@@ -93,23 +96,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-DATE_INPUT_FORMATS = ("%d %b %Y",)
-
-LANGUAGE_CODE = "es"
+# DATE_INPUT_FORMATS = ("%d %b %Y",)
+LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_L10N = False
-
 USE_TZ = True
-
 SITE_ID = 1
-
 LANGUAGES = [
-    ("es", _("spanish")),
-    ("en", _("english")),
+    ("en", ("english")),
 ]
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, "../locale")]
@@ -135,4 +131,5 @@ STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "../public/media")
 MEDIA_URL = "/media/"
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 

@@ -29,12 +29,12 @@ create the .env file
 
         DJANGO_SECRET_KEY=
         DJANGO_DATABASE_HOST=database
-        DJANGO_DATABASE_NAME=iainterative_db
+        DJANGO_DATABASE_NAME=iainteractive_db
         DJANGO_DATABASE_USER=postgres
         DJANGO_DATABASE_PASSWORD=postgres
         POSTGRES_USER=postgres
         POSTGRES_PASSWORD=postgres
-        POSTGRES_DB=iainterative_db
+        POSTGRES_DB=iainteractive_db
         
 Type in the bash
 

@@ -1,12 +1,12 @@
 """Common Urls module"""
 
 # Django
-from django.conf.urls import url
+from django.urls import path
 
 # Common
 from .views import *
 
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view(), name='home_view'),
+    path('', HomeView.as_view(), name='home_view'),
 ]

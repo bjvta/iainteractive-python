@@ -10,7 +10,7 @@ MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]  # noqa
 
 DEBUG_TOOLBAR_CONFIG = {
     "SHOW_TOOLBAR_CALLBACK": (
-        lambda request: not request.is_ajax()
+        lambda request: request.headers.get('x-requested-with') != 'XMLHttpRequest'
         and request.path != "/"  # noqa: E731
     )
 }
