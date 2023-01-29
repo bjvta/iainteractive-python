@@ -38,3 +38,8 @@ runserver:
 .PHONY: backend
 backend:
 	docker-compose run --rm --service-ports --use-aliases backend --shell
+
+
+.PHONY: seed
+seed:
+	python src/manage.py seeders 

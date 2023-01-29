@@ -55,6 +55,15 @@ Before running the application we need to run the frontend, go to `src/frontend`
         yarn install
         yarn run server
 
+### Loading seeders
+
+We will add data for this projects, Grimories and Magic Affinities, and in order to load, please run 
+
+        make seed
+
+
+### Running server
+
 Now we can run the project, inside the container please
 
         make runserver

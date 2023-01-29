@@ -3,7 +3,8 @@
 
 from django.db import models
 
-from iainteractive.apps.common.validators import validate_age, validate_only_letters
+from iainteractive.apps.common.validators import (validate_age,
+                                                  validate_only_letters)
 
 """
 Grimorie is the section where an Applicant will be added
