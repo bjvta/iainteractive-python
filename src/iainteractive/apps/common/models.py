@@ -2,7 +2,7 @@
 
 
 from django.db import models
-
+from iainteractive.apps.common.custom_fields import APPLICANT_STATUS
 from iainteractive.apps.common.validators import (validate_age,
                                                   validate_only_letters)
 
@@ -46,6 +46,7 @@ class Applicant(models.Model):
     grimorie = models.ForeignKey(
         Grimorie, on_delete=models.CASCADE, blank=True, null=True
     )
+    status = models.CharField(max_length=1, choices=APPLICANT_STATUS, default='0')
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} - {self.magic_affinity}"
